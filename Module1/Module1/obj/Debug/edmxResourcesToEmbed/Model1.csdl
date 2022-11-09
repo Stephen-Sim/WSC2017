@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WSC2017_Module1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WSC2017_Module1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Countries" EntityType="WSC2017_Module1Model.Country" />
+    <EntitySet Name="CrashTypes" EntityType="WSC2017_Module1Model.CrashType" />
+    <EntitySet Name="Logs" EntityType="WSC2017_Module1Model.Log" />
+    <EntitySet Name="Offices" EntityType="WSC2017_Module1Model.Office" />
+    <EntitySet Name="Roles" EntityType="WSC2017_Module1Model.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="WSC2017_Module1Model.sysdiagram" />
+    <EntitySet Name="Users" EntityType="WSC2017_Module1Model.User" />
+    <AssociationSet Name="FK_Office_Country" Association="WSC2017_Module1Model.FK_Office_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Office" EntitySet="Offices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_CrashTypes" Association="WSC2017_Module1Model.FK_Logs_CrashTypes">
+      <End Role="CrashType" EntitySet="CrashTypes" />
+      <End Role="Log" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_Users" Association="WSC2017_Module1Model.FK_Logs_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Log" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Offices" Association="WSC2017_Module1Model.FK_Users_Offices">
+      <End Role="Office" EntitySet="Offices" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="WSC2017_Module1Model.FK_Users_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Offices" Relationship="WSC2017_Module1Model.FK_Office_Country" FromRole="Country" ToRole="Office" />
+  </EntityType>
+  <EntityType Name="CrashType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Logs" Relationship="WSC2017_Module1Model.FK_Logs_CrashTypes" FromRole="CrashType" ToRole="Log" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="LogInTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LogoutTime" Type="DateTime" Precision="3" />
+    <Property Name="NotProperLogoutReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CrashType" Type="Int32" />
+    <NavigationProperty Name="CrashType1" Relationship="WSC2017_Module1Model.FK_Logs_CrashTypes" FromRole="Log" ToRole="CrashType" />
+    <NavigationProperty Name="User" Relationship="WSC2017_Module1Model.FK_Logs_Users" FromRole="Log" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Office">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Country" Relationship="WSC2017_Module1Model.FK_Office_Country" FromRole="Office" ToRole="Country" />
+    <NavigationProperty Name="Users" Relationship="WSC2017_Module1Model.FK_Users_Offices" FromRole="Office" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="WSC2017_Module1Model.FK_Users_Roles" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfficeID" Type="Int32" />
+    <Property Name="Birthdate" Type="DateTime" Precision="0" />
+    <Property Name="Active" Type="Boolean" />
+    <NavigationProperty Name="Logs" Relationship="WSC2017_Module1Model.FK_Logs_Users" FromRole="User" ToRole="Log" />
+    <NavigationProperty Name="Office" Relationship="WSC2017_Module1Model.FK_Users_Offices" FromRole="User" ToRole="Office" />
+    <NavigationProperty Name="Role" Relationship="WSC2017_Module1Model.FK_Users_Roles" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_Office_Country">
+    <End Type="WSC2017_Module1Model.Country" Role="Country" Multiplicity="1" />
+    <End Type="WSC2017_Module1Model.Office" Role="Office" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Office">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logs_CrashTypes">
+    <End Type="WSC2017_Module1Model.CrashType" Role="CrashType" Multiplicity="0..1" />
+    <End Type="WSC2017_Module1Model.Log" Role="Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrashType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="CrashType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logs_Users">
+    <End Type="WSC2017_Module1Model.User" Role="User" Multiplicity="1" />
+    <End Type="WSC2017_Module1Model.Log" Role="Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Offices">
+    <End Type="WSC2017_Module1Model.Office" Role="Office" Multiplicity="0..1" />
+    <End Type="WSC2017_Module1Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Office">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Type="WSC2017_Module1Model.Role" Role="Role" Multiplicity="1" />
+    <End Type="WSC2017_Module1Model.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

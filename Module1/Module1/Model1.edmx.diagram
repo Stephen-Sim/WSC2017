@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="43c58a69a34944a6855dc753a913b3d6" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="WSC2017_Module1Model.Country" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="WSC2017_Module1Model.CrashType" Width="1.5" PointX="5.25" PointY="5.875" />
+        <EntityTypeShape EntityType="WSC2017_Module1Model.Log" Width="1.5" PointX="7.5" PointY="1.375" />
+        <EntityTypeShape EntityType="WSC2017_Module1Model.Office" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="WSC2017_Module1Model.Role" Width="1.5" PointX="3" PointY="5.875" />
+        <EntityTypeShape EntityType="WSC2017_Module1Model.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="WSC2017_Module1Model.User" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="WSC2017_Module1Model.FK_Office_Country" />
+        <AssociationConnector Association="WSC2017_Module1Model.FK_Logs_CrashTypes" />
+        <AssociationConnector Association="WSC2017_Module1Model.FK_Logs_Users" />
+        <AssociationConnector Association="WSC2017_Module1Model.FK_Users_Offices" />
+        <AssociationConnector Association="WSC2017_Module1Model.FK_Users_Roles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
