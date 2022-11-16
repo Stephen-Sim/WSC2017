@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="WSC2017_Module1Model.Log" Width="1.5" PointX="7.5" PointY="1.375" />
         <EntityTypeShape EntityType="WSC2017_Module1Model.Office" Width="1.5" PointX="3" PointY="1.5" />
         <EntityTypeShape EntityType="WSC2017_Module1Model.Role" Width="1.5" PointX="3" PointY="5.875" />
-        <EntityTypeShape EntityType="WSC2017_Module1Model.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" />
         <EntityTypeShape EntityType="WSC2017_Module1Model.User" Width="1.5" PointX="5.25" PointY="1" />
         <AssociationConnector Association="WSC2017_Module1Model.FK_Office_Country" />
         <AssociationConnector Association="WSC2017_Module1Model.FK_Logs_CrashTypes" />

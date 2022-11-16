@@ -44,8 +44,14 @@ namespace Module1
 
             if (user != null)
             {
-                var l = user.Logs.OrderByDescending(x => x.LogInTime).First();
-                if (l.LogoutTime == null && l.NotProperLogoutReason == null)
+                if (user.Active == false)
+                {
+                    MessageBox.Show("Your acc is suspended!!");
+                    return;
+                }
+
+                var l = user.Logs.Any() ? user.Logs.OrderByDescending(x => x.LogInTime).First() : null;
+                if (l != null && l.LogoutTime == null && l.NotProperLogoutReason == null)
                 {
                     new NoLogOutDetectedForm(l).ShowDialog();
                 }
@@ -61,16 +67,24 @@ namespace Module1
                     ent.Logs.Add(log);
                     ent.SaveChanges();
 
+                    textBox1.Text = String.Empty;
+                    textBox2.Text = String.Empty;
                     this.Hide();
-                    new UserForm(user, log).ShowDialog();
+
+                    if (user.RoleID == 1)
+                    {
+                        new AdminForms(user, log).ShowDialog();
+                    }
+                    else
+                    {
+                        new UserForm(user, log).ShowDialog();
+                    }
                 }
                 catch (DbEntityValidationException err)
                 {
                     Console.WriteLine(err.Message);
                     return;
                 }
-               
-
             }
             else
             {

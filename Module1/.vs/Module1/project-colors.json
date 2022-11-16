@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "de3ccc08-5feb-4d26-adb8-140ab4c3505b": {
+      "ProjectGuid": "de3ccc08-5feb-4d26-adb8-140ab4c3505b",
+      "DisplayName": "Module1",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

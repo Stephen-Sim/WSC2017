@@ -22,6 +22,41 @@ namespace Module1
             this.log = log;
         }
 
+        private async void SpentTime()
+        {
+            var spenttime = DateTime.Parse((DateTime.Now - log.LogInTime).ToString()).ToString("HH : mm : ss");
+            label3.Text = spenttime.ToString();
+            await Task.Delay(1000);
+            SpentTime();
+        }
+
+        private void loadData()
+        {
+            label1.Text = $"Hi, {user.FirstName} {user.LastName}, Welcome to AMONIC airlines";
+            label5.Text = user.Logs.ToList().Where(x => x.LogoutTime == null).ToList().Count().ToString();
+
+            dataGridView1.Rows.Clear();
+
+            var item = user.Logs.OrderByDescending(x => x.LogInTime).ToList();
+
+            for (int i = 0; i < item.Count; i++)
+            {
+                dataGridView1.Rows.Add(
+                    item[i].LogInTime.Date.ToString("MM/dd/yyyy"),
+                    item[i].LogInTime.ToString("HH : mm"),
+                    item[i].LogoutTime == null ? "--" : DateTime.Parse(item[i].LogoutTime.ToString()).ToString("HH : mm"),
+                    item[i].LogoutTime == null ? "--" : DateTime.Parse((item[i].LogoutTime - item[i].LogInTime).ToString()).ToString("HH : mm : ss"),
+                    item[i].LogoutTime == null ? item[i].NotProperLogoutReason : string.Empty 
+                    );
+
+
+                if (item[i].LogoutTime == null)
+                {
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+        }
+
         WSC2017_Module1Entities ent = new WSC2017_Module1Entities();
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,6 +65,15 @@ namespace Module1
             log.LogoutTime = DateTime.Now;
             ent.SaveChanges();
             this.Close();
+
+            var form = (Form1)Application.OpenForms["Form1"];
+            form.Show();
+        }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+            SpentTime();
+            loadData();
         }
     }
 }

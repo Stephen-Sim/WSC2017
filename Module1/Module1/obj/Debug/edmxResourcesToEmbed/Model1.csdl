@@ -6,7 +6,6 @@
     <EntitySet Name="Logs" EntityType="WSC2017_Module1Model.Log" />
     <EntitySet Name="Offices" EntityType="WSC2017_Module1Model.Office" />
     <EntitySet Name="Roles" EntityType="WSC2017_Module1Model.Role" />
-    <EntitySet Name="sysdiagrams" EntityType="WSC2017_Module1Model.sysdiagram" />
     <EntitySet Name="Users" EntityType="WSC2017_Module1Model.User" />
     <AssociationSet Name="FK_Office_Country" Association="WSC2017_Module1Model.FK_Office_Country">
       <End Role="Country" EntitySet="Countries" />
@@ -77,16 +76,6 @@
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Users" Relationship="WSC2017_Module1Model.FK_Users_Roles" FromRole="Role" ToRole="User" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="User">
     <Key>
