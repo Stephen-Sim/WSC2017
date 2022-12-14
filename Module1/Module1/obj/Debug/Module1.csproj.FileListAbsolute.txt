@@ -35,3 +35,5 @@ C:\Users\simsh\Desktop\WSC2017\Module1\Module1\obj\Debug\Module1.csproj.CopyComp
 C:\Users\simsh\Desktop\WSC2017\Module1\Module1\obj\Debug\Module1.exe
 C:\Users\simsh\Desktop\WSC2017\Module1\Module1\obj\Debug\Module1.pdb
 C:\Users\simsh\Desktop\WSC2017\Module1\Module1\obj\Debug\Module1.AdminForms.resources
+C:\Users\simsh\Desktop\WSC2017\Module1\Module1\obj\Debug\Module1.AddUserForm.resources
+C:\Users\simsh\Desktop\WSC2017\Module1\Module1\obj\Debug\Module1.EditRoleForm.resources

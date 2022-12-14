@@ -34,12 +34,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.wSC2017_Module1DataSet = new Module1.WSC2017_Module1DataSet();
             this.officesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wSC2017_Module1DataSet = new Module1.WSC2017_Module1DataSet();
             this.officesTableAdapter = new Module1.WSC2017_Module1DataSetTableAdapters.OfficesTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +45,11 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Module1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Module1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +71,7 @@
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
             this.addUserToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
             this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -100,15 +101,15 @@
             this.comboBox1.ValueMember = "ID";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // wSC2017_Module1DataSet
-            // 
-            this.wSC2017_Module1DataSet.DataSetName = "WSC2017_Module1DataSet";
-            this.wSC2017_Module1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // officesBindingSource
             // 
             this.officesBindingSource.DataMember = "Offices";
             this.officesBindingSource.DataSource = this.wSC2017_Module1DataSet;
+            // 
+            // wSC2017_Module1DataSet
+            // 
+            this.wSC2017_Module1DataSet.DataSetName = "WSC2017_Module1DataSet";
+            this.wSC2017_Module1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // officesTableAdapter
             // 
@@ -132,25 +133,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(985, 335);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(16, 444);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Change Role";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(250, 444);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(239, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Enable / Disable Login";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Column1
             // 
@@ -202,6 +184,26 @@
             this.Column7.Name = "Column7";
             this.Column7.Width = 150;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 444);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 36);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Change Role";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(250, 444);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(239, 36);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Enable / Disable Login";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // AdminForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -215,12 +217,12 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminForms";
-            this.Text = "AdminForms";
+            this.Text = "AMONIIC Airlines Automation System";
             this.Load += new System.EventHandler(this.AdminForms_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Module1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Module1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

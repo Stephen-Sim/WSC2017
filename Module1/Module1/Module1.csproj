@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRoleForm.Designer.cs">
+      <DependentUpon>EditRoleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Log.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -119,8 +131,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSC2017_Module1DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForms.resx">
       <DependentUpon>AdminForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRoleForm.resx">
+      <DependentUpon>EditRoleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

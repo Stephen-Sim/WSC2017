@@ -20,6 +20,8 @@ namespace Module1
             this.loadData(null);
         }
 
+        
+
         public User User { get; set; }
         public Log log { get; set; }
 
@@ -107,6 +109,21 @@ namespace Module1
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.Rows[e.RowIndex].Selected = true;
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddUserForm(this.User, log).ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var userId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            var user = ent.Users.FirstOrDefault(x => x.ID == userId);
+
+            this.Hide();
+            new EditRoleForm(user, this.User, this.log).ShowDialog();
         }
     }
 }

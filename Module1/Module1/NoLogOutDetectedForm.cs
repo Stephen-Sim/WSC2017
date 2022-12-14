@@ -17,7 +17,7 @@ namespace Module1
         {
             InitializeComponent();
             this.log = log;
-            label1.Text = $"no logout deteceted login on {log.LogInTime.Date.ToString("dd/MM/yyyy")} at {log.LogInTime.TimeOfDay}";
+            label1.Text = $"no logout deteceted login on {log.LogInTime.Date.ToString("dd/MM/yyyy")} at {log.LogInTime.ToString("HH : mm : ss")}";
         }
 
         WSC2017_Module1Entities ent = new WSC2017_Module1Entities();
