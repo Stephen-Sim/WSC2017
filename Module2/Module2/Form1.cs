@@ -54,7 +54,7 @@ namespace Module2
             var allData = ent.Schedules.ToList().Where(x => 
                 x.Route.DepartureAirportID == (int)comboBox1.SelectedValue &&
                 x.Route.ArrivalAirportID == (int)comboBox2.SelectedValue &&
-                x.Date == dateTimePicker1.Value.Date &&
+                x.Date >= dateTimePicker1.Value.Date &&
                 x.FlightNumber == textBox1.Text.Trim()
             ).ToList();
 
@@ -118,17 +118,24 @@ namespace Module2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var dr = MessageBox.Show("Are you sure to confirm or cancel the flight?", "alert", MessageBoxButtons.YesNo);
-            
-            if (dr == DialogResult.Yes)
+            try
             {
-                var scheduleId = dataGridView1.SelectedRows[0].Cells[0].Value;
-                var schedule = ent.Schedules.FirstOrDefault(x => x.ID == (int)scheduleId);
+                var dr = MessageBox.Show("Are you sure to confirm or cancel the flight?", "alert", MessageBoxButtons.YesNo);
 
-                schedule.Confirmed = !schedule.Confirmed;
-                ent.SaveChanges();
+                if (dr == DialogResult.Yes)
+                {
+                    var scheduleId = dataGridView1.SelectedRows[0].Cells[0].Value;
+                    var schedule = ent.Schedules.FirstOrDefault(x => x.ID == (int)scheduleId);
 
-                button4_Click(null, null);
+                    schedule.Confirmed = !schedule.Confirmed;
+                    ent.SaveChanges();
+
+                    button4_Click(null, null);
+                }
+            }
+            catch (Exception)
+            {
+                return;
             }
         }
     }
