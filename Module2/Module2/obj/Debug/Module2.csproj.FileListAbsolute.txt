@@ -1,0 +1,16 @@
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\Module2.exe.config
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\Module2.exe
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\Module2.pdb
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.csproj.AssemblyReference.cache
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.csproj.SuggestedBindingRedirects.cache
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.Form1.resources
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.Properties.Resources.resources
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.csproj.GenerateResource.cache
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.csproj.CoreCompileInputs.cache
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.exe
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.pdb
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\EntityFramework.dll
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\EntityFramework.xml
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.csproj.CopyComplete
