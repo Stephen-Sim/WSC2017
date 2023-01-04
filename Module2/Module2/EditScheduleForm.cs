@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,22 @@ namespace Module2
 
         private void EditScheduleForm_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.FromArgb(25, 106, 166);
+
+            var pfc = new PrivateFontCollection();
+            pfc.AddFontFile(Application.StartupPath + "\\font.TTF");
+            try
+            {
+                foreach (Control control in this.Controls)
+                {
+                    control.Font = new Font(pfc.Families[0], control.Font.Size);
+                }
+            }
+            catch (Exception err)
+            {
+
+            }
+
             var schedule = ent.Schedules.FirstOrDefault(x => x.ID == scheduleId);
             label2.Text = schedule.Route.Airport.IATACode;
             label4.Text = schedule.Route.Airport1.IATACode;

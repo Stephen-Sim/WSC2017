@@ -176,5 +176,10 @@ namespace Module2
             label6.Text = dup.ToString();
             label7.Text = miss.ToString();
         }
+
+        private void ApplyChangesForm_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(25, 106, 166);
+        }
     }
 }

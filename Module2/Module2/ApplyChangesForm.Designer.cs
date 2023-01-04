@@ -148,6 +148,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ApplyChangesForm";
             this.Text = "ApplyChangesForm";
+            this.Load += new System.EventHandler(this.ApplyChangesForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

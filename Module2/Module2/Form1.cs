@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,22 @@ namespace Module2
         {
             // TODO: This line of code loads data into the 'wSC2017_Session2DataSet.Airports' table. You can move, or remove it, as needed.
             this.airportsTableAdapter.Fill(this.wSC2017_Session2DataSet.Airports);
+
+            this.BackColor = Color.FromArgb(25, 106, 166);
+
+            var pfc = new PrivateFontCollection();
+            pfc.AddFontFile(Application.StartupPath + "\\font.TTF");
+            try
+            {
+                foreach (Control control in this.Controls)
+                {
+                    control.Font = new Font(pfc.Families[0], control.Font.Size);
+                }
+            }
+            catch (Exception err)
+            {
+                
+            }
 
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;
