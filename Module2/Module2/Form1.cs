@@ -138,5 +138,25 @@ namespace Module2
                 return;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var scheduleId = dataGridView1.SelectedRows[0].Cells[0].Value;
+                this.Hide();
+                new EditScheduleForm((int)scheduleId).ShowDialog();
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new ApplyChangesForm().ShowDialog();
+        }
     }
 }

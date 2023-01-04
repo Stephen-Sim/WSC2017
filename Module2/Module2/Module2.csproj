@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplyChangesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplyChangesForm.Designer.cs">
+      <DependentUpon>ApplyChangesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditScheduleForm.Designer.cs">
+      <DependentUpon>EditScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSC2017_Session2DataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApplyChangesForm.resx">
+      <DependentUpon>ApplyChangesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditScheduleForm.resx">
+      <DependentUpon>EditScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

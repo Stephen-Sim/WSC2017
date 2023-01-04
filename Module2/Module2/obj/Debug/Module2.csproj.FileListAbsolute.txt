@@ -14,3 +14,5 @@ C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\EntityFramework.SqlServ
 C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\EntityFramework.xml
 C:\Users\simsh\Desktop\WSC2017\Module2\Module2\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.csproj.CopyComplete
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.EditScheduleForm.resources
+C:\Users\simsh\Desktop\WSC2017\Module2\Module2\obj\Debug\Module2.ApplyChangesForm.resources

@@ -34,7 +34,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.airportsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.wSC2017_Session2DataSet = new Module2.WSC2017_Session2DataSet();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.airportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,15 +58,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.wSC2017_Session2DataSet = new Module2.WSC2017_Session2DataSet();
-            this.airportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airportsTableAdapter = new Module2.WSC2017_Session2DataSetTableAdapters.AirportsTableAdapter();
-            this.airportsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Session2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -123,6 +123,16 @@
             this.comboBox2.TabIndex = 11;
             this.comboBox2.ValueMember = "ID";
             // 
+            // airportsBindingSource1
+            // 
+            this.airportsBindingSource1.DataMember = "Airports";
+            this.airportsBindingSource1.DataSource = this.wSC2017_Session2DataSet;
+            // 
+            // wSC2017_Session2DataSet
+            // 
+            this.wSC2017_Session2DataSet.DataSetName = "WSC2017_Session2DataSet";
+            this.wSC2017_Session2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.airportsBindingSource;
@@ -133,6 +143,11 @@
             this.comboBox1.Size = new System.Drawing.Size(158, 21);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.ValueMember = "ID";
+            // 
+            // airportsBindingSource
+            // 
+            this.airportsBindingSource.DataMember = "Airports";
+            this.airportsBindingSource.DataSource = this.wSC2017_Session2DataSet;
             // 
             // button4
             // 
@@ -287,6 +302,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "🖋️ Edit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -296,25 +312,11 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "⬆️ Import Changes";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // wSC2017_Session2DataSet
-            // 
-            this.wSC2017_Session2DataSet.DataSetName = "WSC2017_Session2DataSet";
-            this.wSC2017_Session2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // airportsBindingSource
-            // 
-            this.airportsBindingSource.DataMember = "Airports";
-            this.airportsBindingSource.DataSource = this.wSC2017_Session2DataSet;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // airportsTableAdapter
             // 
             this.airportsTableAdapter.ClearBeforeFill = true;
-            // 
-            // airportsBindingSource1
-            // 
-            this.airportsBindingSource1.DataMember = "Airports";
-            this.airportsBindingSource1.DataSource = this.wSC2017_Session2DataSet;
             // 
             // Form1
             // 
@@ -331,10 +333,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Session2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
