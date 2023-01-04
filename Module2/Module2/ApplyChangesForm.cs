@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace Module2
     public partial class ApplyChangesForm : Form
     {
         public WSC2017_Session2Entities ent { get; set; } = new WSC2017_Session2Entities();
+        
+        PrivateFontCollection pfc = new PrivateFontCollection();
+
         public ApplyChangesForm()
         {
             InitializeComponent();
@@ -180,6 +184,8 @@ namespace Module2
         private void ApplyChangesForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(25, 106, 166);
+            pfc.AddFontFile(Application.StartupPath + "\\font.TTF");
+            this.panel1.Font = new Font(pfc.Families[0], 9f);
         }
     }
 }

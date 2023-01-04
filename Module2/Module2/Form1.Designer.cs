@@ -59,11 +59,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.airportsTableAdapter = new Module2.WSC2017_Session2DataSetTableAdapters.AirportsTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Session2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -79,7 +81,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(606, 100);
             this.groupBox1.TabIndex = 0;
@@ -218,7 +220,7 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 110);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(606, 227);
             this.dataGridView1.TabIndex = 1;
@@ -286,7 +288,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 351);
+            this.button1.Location = new System.Drawing.Point(4, 343);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 2;
@@ -296,7 +298,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(139, 351);
+            this.button2.Location = new System.Drawing.Point(131, 343);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 23);
             this.button2.TabIndex = 3;
@@ -306,7 +308,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(497, 351);
+            this.button3.Location = new System.Drawing.Point(489, 343);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 23);
             this.button3.TabIndex = 4;
@@ -318,16 +320,24 @@
             // 
             this.airportsTableAdapter.ClearBeforeFill = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(616, 371);
+            this.panel1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 381);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(634, 381);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Manage Flight Scedules";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -337,6 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wSC2017_Session2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -373,6 +384,7 @@
         private System.Windows.Forms.BindingSource airportsBindingSource;
         private WSC2017_Session2DataSetTableAdapters.AirportsTableAdapter airportsTableAdapter;
         private System.Windows.Forms.BindingSource airportsBindingSource1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
