@@ -22,7 +22,6 @@ namespace Module2
         }
 
         PrivateFontCollection pfc = new PrivateFontCollection();
-
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'wSC2017_Session2DataSet.Airports' table. You can move, or remove it, as needed.
@@ -30,10 +29,10 @@ namespace Module2
 
             this.BackColor = Color.FromArgb(25, 106, 166);
 
+            pfc.AddFontFile(Application.StartupPath + "\\font.TTF");
             try
             {
-                pfc.AddFontFile(Application.StartupPath + "\\font.TTF");
-                this.panel1.Font = new Font(pfc.Families[0], 9f);
+                Font = new Font(pfc.Families[0], 9f);
             }
             catch (Exception err)
             {
